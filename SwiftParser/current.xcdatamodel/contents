@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Xcode 4.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AbstractAttribute" representedClassName="AbstractAttribute" isAbstract="YES" syncable="YES">
+        <attribute name="datatype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateFormat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="floatFormat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="format" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="inlineImage" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="max" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxLength" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="min" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="multiInstance" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ordinalChoice" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="regex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regexMessage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time24Hours" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="choiceValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChoiceValue" inverseName="attribute" inverseEntity="ChoiceValue" syncable="YES"/>
+        <relationship name="customFieldValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AbstractCustomFieldValue" inverseName="attribute" inverseEntity="AbstractCustomFieldValue" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AttributeGroup" inverseName="deviceAttributes" inverseEntity="AttributeGroup" syncable="YES"/>
+    </entity>
+    <entity name="AbstractAttributeStateBehavior" representedClassName="AbstractAttributeStateBehavior" isAbstract="YES" syncable="YES">
+        <attribute name="behavior" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="association" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbstractTypeAttribute" inverseName="behaviors" inverseEntity="AbstractTypeAttribute" syncable="YES"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbstractState" inverseName="behaviors" inverseEntity="AbstractState" syncable="YES"/>
+    </entity>
+    <entity name="AbstractCustomFieldValue" representedClassName="AbstractCustomFieldValue" isAbstract="YES" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="attribute" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbstractAttribute" inverseName="customFieldValues" inverseEntity="AbstractAttribute" syncable="YES"/>
+        <relationship name="file" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileMetadata" inverseName="customFieldValues" inverseEntity="FileMetadata" syncable="YES"/>
+    </entity>
+    <entity name="AbstractState" representedClassName="AbstractState" isAbstract="YES" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="behaviors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AbstractAttributeStateBehavior" inverseName="state" inverseEntity="AbstractAttributeStateBehavior" syncable="YES"/>
+        <relationship name="logicals" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StateLogical" inverseName="state" inverseEntity="StateLogical" syncable="YES"/>
+    </entity>
+    <entity name="AbstractStateMachine" representedClassName="AbstractStateMachine" isAbstract="YES" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AbstractStateUpdate" representedClassName="AbstractStateUpdate" isAbstract="YES" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AbstractTransition" representedClassName="AbstractTransition" isAbstract="YES" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pastTense" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="undo" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="AbstractTypeAttribute" representedClassName="AbstractTypeAttribute" isAbstract="YES" syncable="YES">
+        <attribute name="behavior" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="defaultValue" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="required" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="behaviors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AbstractAttributeStateBehavior" inverseName="association" inverseEntity="AbstractAttributeStateBehavior" syncable="YES"/>
+    </entity>
+    <entity name="AbstractUpdate" representedClassName="AbstractUpdate" isAbstract="YES" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="effectiveTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="serviceRequestUpdatesCreatedBy" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="AbstractUpdateFile" representedClassName="AbstractUpdateFile" isAbstract="YES" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="metaData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileMetadata" inverseName="updateFiles" inverseEntity="FileMetadata" syncable="YES"/>
+    </entity>
+    <entity name="AttributeGroup" representedClassName="AttributeGroup" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="deviceAttributes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AbstractAttribute" inverseName="group" inverseEntity="AbstractAttribute" syncable="YES"/>
+    </entity>
+    <entity name="ChoiceValue" representedClassName="ChoiceValue" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="magnitude" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attribute" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbstractAttribute" inverseName="choiceValues" inverseEntity="AbstractAttribute" syncable="YES"/>
+    </entity>
+    <entity name="ContactInfo" representedClassName="ContactInfo" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="contactInfo" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Contract" representedClassName="Contract" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contractor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="contractorContracts" inverseEntity="Organization" syncable="YES"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="customerContracts" inverseEntity="Organization" syncable="YES"/>
+        <relationship name="devices" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceContract" inverseName="contract" inverseEntity="DeviceContract" syncable="YES"/>
+        <relationship name="deviceTypeAttributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceTypeAttributeContract" inverseName="contract" inverseEntity="DeviceTypeAttributeContract" syncable="YES"/>
+        <relationship name="serviceRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SR" inverseName="contract" inverseEntity="SR" syncable="YES"/>
+        <relationship name="srCategoryAttributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRCategoryAttribute" inverseName="contract" inverseEntity="SRCategoryAttribute" syncable="YES"/>
+        <relationship name="srStateMachineCategories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRStateMachineCategory" inverseName="contract" inverseEntity="SRStateMachineCategory" syncable="YES"/>
+    </entity>
+    <entity name="Device" representedClassName="Device" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="updated"/>
+            </userInfo>
+        </attribute>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allUpdates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceUpdate" inverseName="device" inverseEntity="DeviceUpdate" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Device" inverseName="parent" inverseEntity="Device" syncable="YES"/>
+        <relationship name="contracts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceContract" inverseName="device" inverseEntity="DeviceContract" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="devicesCreatedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="customFieldValues" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceCustomFieldValue" inverseName="device" inverseEntity="DeviceCustomFieldValue" syncable="YES"/>
+        <relationship name="drawingSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrawingSet" inverseName="rootDevice" inverseEntity="DrawingSet" syncable="YES"/>
+        <relationship name="fromLinks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceLink" inverseName="from" inverseEntity="DeviceLink" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="devices" inverseEntity="Location" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="children" inverseEntity="Device" syncable="YES"/>
+        <relationship name="pmTasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMTask" inverseName="device" inverseEntity="PMTask" syncable="YES"/>
+        <relationship name="provides" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceLink" inverseName="provider" inverseEntity="DeviceLink" syncable="YES"/>
+        <relationship name="serviceRequestDevices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SRDevice" inverseName="device" inverseEntity="SRDevice" syncable="YES"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceState" inverseName="devices" inverseEntity="DeviceState" syncable="YES"/>
+        <relationship name="toLinks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceLink" inverseName="to" inverseEntity="DeviceLink" syncable="YES"/>
+        <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceType" inverseName="devices" inverseEntity="DeviceType" syncable="YES"/>
+        <relationship name="updatedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="devicesUpdatedBy" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="DeviceAttribute" representedClassName="DeviceAttribute" parentEntity="AbstractAttribute" syncable="YES">
+        <relationship name="deviceTypeAttributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceTypeAttribute" inverseName="attribute" inverseEntity="DeviceTypeAttribute" syncable="YES"/>
+    </entity>
+    <entity name="DeviceContract" representedClassName="DeviceContract" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contract" inverseName="devices" inverseEntity="Contract" syncable="YES"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="contracts" inverseEntity="Device" syncable="YES"/>
+    </entity>
+    <entity name="DeviceCustomFieldValue" representedClassName="DeviceCustomFieldValue" parentEntity="AbstractCustomFieldValue" syncable="YES">
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="customFieldValues" inverseEntity="Device" syncable="YES"/>
+    </entity>
+    <entity name="DeviceLink" representedClassName="DeviceLink" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="from" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="fromLinks" inverseEntity="Device" syncable="YES"/>
+        <relationship name="provider" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="provides" inverseEntity="Device" syncable="YES"/>
+        <relationship name="to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="toLinks" inverseEntity="Device" syncable="YES"/>
+    </entity>
+    <entity name="DeviceState" representedClassName="DeviceState" parentEntity="AbstractState" syncable="YES">
+        <relationship name="defaultInitialStateMachines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceStateMachine" inverseName="defaultInitialState" inverseEntity="DeviceStateMachine" syncable="YES"/>
+        <relationship name="devices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Device" inverseName="state" inverseEntity="Device" syncable="YES"/>
+        <relationship name="sourceTransitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceTransition" inverseName="source" inverseEntity="DeviceTransition" syncable="YES"/>
+        <relationship name="stateUpdates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceStateUpdate" inverseName="state" inverseEntity="DeviceStateUpdate" syncable="YES"/>
+        <relationship name="targetTransitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceTransition" inverseName="target" inverseEntity="DeviceTransition" syncable="YES"/>
+    </entity>
+    <entity name="DeviceStateMachine" representedClassName="DeviceStateMachine" parentEntity="AbstractStateMachine" syncable="YES">
+        <relationship name="defaultInitialState" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceState" inverseName="defaultInitialStateMachines" inverseEntity="DeviceState" syncable="YES"/>
+        <relationship name="deviceTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviceType" inverseName="machine" inverseEntity="DeviceType" syncable="YES"/>
+        <relationship name="transitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceTransition" inverseName="machine" inverseEntity="DeviceTransition" syncable="YES"/>
+    </entity>
+    <entity name="DeviceStateUpdate" representedClassName="DeviceStateUpdate" parentEntity="AbstractStateUpdate" syncable="YES">
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceState" inverseName="stateUpdates" inverseEntity="DeviceState" syncable="YES"/>
+        <relationship name="transition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceTransition" inverseName="stateUpdates" inverseEntity="DeviceTransition" syncable="YES"/>
+        <relationship name="undoneRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceStateUpdate" inverseName="undoRecord" inverseEntity="DeviceStateUpdate" syncable="YES"/>
+        <relationship name="undoRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceStateUpdate" inverseName="undoneRecord" inverseEntity="DeviceStateUpdate" syncable="YES"/>
+        <relationship name="update" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceUpdate" inverseName="stateUpdate" inverseEntity="DeviceUpdate" syncable="YES"/>
+    </entity>
+    <entity name="DeviceTransition" representedClassName="DeviceTransition" parentEntity="AbstractTransition" syncable="YES">
+        <relationship name="machine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceStateMachine" inverseName="transitions" inverseEntity="DeviceStateMachine" syncable="YES"/>
+        <relationship name="mainTransition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceTransition" inverseName="undoTransition" inverseEntity="DeviceTransition" syncable="YES"/>
+        <relationship name="source" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceState" inverseName="sourceTransitions" inverseEntity="DeviceState" syncable="YES"/>
+        <relationship name="stateUpdates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceStateUpdate" inverseName="transition" inverseEntity="DeviceStateUpdate" syncable="YES"/>
+        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceState" inverseName="targetTransitions" inverseEntity="DeviceState" syncable="YES"/>
+        <relationship name="undoTransition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceTransition" inverseName="mainTransition" inverseEntity="DeviceTransition" syncable="YES"/>
+    </entity>
+    <entity name="DeviceType" representedClassName="DeviceType" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="deviceClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="devices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Device" inverseName="type" inverseEntity="Device" syncable="YES"/>
+        <relationship name="deviceTypeAttributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceTypeAttribute" inverseName="deviceType" inverseEntity="DeviceTypeAttribute" syncable="YES"/>
+        <relationship name="machine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceStateMachine" inverseName="deviceTypes" inverseEntity="DeviceStateMachine" syncable="YES"/>
+    </entity>
+    <entity name="DeviceTypeAttribute" representedClassName="DeviceTypeAttribute" parentEntity="AbstractTypeAttribute" syncable="YES">
+        <relationship name="attribute" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceAttribute" inverseName="deviceTypeAttributes" inverseEntity="DeviceAttribute" syncable="YES"/>
+        <relationship name="contracts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceTypeAttributeContract" inverseName="deviceTypeAttribute" inverseEntity="DeviceTypeAttributeContract" syncable="YES"/>
+        <relationship name="deviceType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceType" inverseName="deviceTypeAttributes" inverseEntity="DeviceType" syncable="YES"/>
+    </entity>
+    <entity name="DeviceTypeAttributeContract" representedClassName="DeviceTypeAttributeContract" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contract" inverseName="deviceTypeAttributes" inverseEntity="Contract" syncable="YES"/>
+        <relationship name="deviceTypeAttribute" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceTypeAttribute" inverseName="contracts" inverseEntity="DeviceTypeAttribute" syncable="YES"/>
+    </entity>
+    <entity name="DeviceTypeAttributeStateBehavior" representedClassName="DeviceTypeAttributeStateBehavior" parentEntity="AbstractAttributeStateBehavior" syncable="YES"/>
+    <entity name="DeviceUpdate" representedClassName="DeviceUpdate" parentEntity="AbstractUpdate" syncable="YES">
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="allUpdates" inverseEntity="Device" syncable="YES"/>
+        <relationship name="files" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DeviceUpdateFile" inverseName="deviceUpdate" inverseEntity="DeviceUpdateFile" syncable="YES"/>
+        <relationship name="stateUpdate" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="DeviceStateUpdate" inverseName="update" inverseEntity="DeviceStateUpdate" syncable="YES"/>
+    </entity>
+    <entity name="DeviceUpdateFile" representedClassName="DeviceUpdateFile" parentEntity="AbstractUpdateFile" syncable="YES">
+        <relationship name="deviceUpdate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceUpdate" inverseName="files" inverseEntity="DeviceUpdate" syncable="YES"/>
+    </entity>
+    <entity name="Drawing" representedClassName="Drawing" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="drawingsCreatedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="drawingSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DrawingSet" inverseName="drawings" inverseEntity="DrawingSet" syncable="YES"/>
+        <relationship name="fileMetaData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileMetadata" inverseName="drawingsFileMetaData" inverseEntity="FileMetadata" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="drawings" inverseEntity="Location" syncable="YES"/>
+        <relationship name="updatedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="drawingsUpdatedBy" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="DrawingSet" representedClassName="DrawingSet" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="drawingSetCreatedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="drawings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drawing" inverseName="drawingSet" inverseEntity="Drawing" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="drawingSets" inverseEntity="Location" syncable="YES"/>
+        <relationship name="rootDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="drawingSets" inverseEntity="Device" syncable="YES"/>
+        <relationship name="updatedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="drawingSetUpdatedBy" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="FileMetadata" representedClassName="FileMetadata" syncable="YES">
+        <attribute name="contentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customFieldValueUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="digest" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="originalName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pmTaskUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relatedObjectUuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="customFieldValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AbstractCustomFieldValue" inverseName="file" inverseEntity="AbstractCustomFieldValue" syncable="YES"/>
+        <relationship name="drawingsFileMetaData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drawing" inverseName="fileMetaData" inverseEntity="Drawing" syncable="YES"/>
+        <relationship name="updateFiles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AbstractUpdateFile" inverseName="metaData" inverseEntity="AbstractUpdateFile" syncable="YES"/>
+        <relationship name="workFormPDFData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkFormPDFData" inverseName="file" inverseEntity="WorkFormPDFData" syncable="YES"/>
+        <relationship name="workFormPDFRevisions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkFormPDFRevision" inverseName="fileMetaData" inverseEntity="WorkFormPDFRevision" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Location" inverseName="parent" inverseEntity="Location" syncable="YES"/>
+        <relationship name="devices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Device" inverseName="location" inverseEntity="Device" syncable="YES"/>
+        <relationship name="drawings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drawing" inverseName="location" inverseEntity="Drawing" syncable="YES"/>
+        <relationship name="drawingSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrawingSet" inverseName="location" inverseEntity="DrawingSet" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="children" inverseEntity="Location" syncable="YES"/>
+        <relationship name="pmTasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PMTask" inverseName="location" inverseEntity="PMTask" syncable="YES"/>
+        <relationship name="serviceRequestDevices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SRDevice" inverseName="location" inverseEntity="SRDevice" syncable="YES"/>
+        <relationship name="serviceRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SR" inverseName="location" inverseEntity="SR" syncable="YES"/>
+    </entity>
+    <entity name="Organization" representedClassName="Organization" syncable="YES">
+        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contractorContracts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contract" inverseName="contractor" inverseEntity="Contract" syncable="YES"/>
+        <relationship name="customerContracts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contract" inverseName="customer" inverseEntity="Contract" syncable="YES"/>
+    </entity>
+    <entity name="PMTask" representedClassName="PMTask" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="formResult" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formSavedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="page" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="pmTasks" inverseEntity="Device" syncable="YES"/>
+        <relationship name="form" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkForm" inverseName="pmTasks" inverseEntity="WorkForm" syncable="YES"/>
+        <relationship name="formData" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="WorkFormPDFData" inverseName="task" inverseEntity="WorkFormPDFData" syncable="YES"/>
+        <relationship name="formRevision" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkFormPDFRevision" inverseName="pmTasks" inverseEntity="WorkFormPDFRevision" syncable="YES"/>
+        <relationship name="formSavedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="pmTasksFormSavedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="pmTasks" inverseEntity="Location" syncable="YES"/>
+        <relationship name="sr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SR" inverseName="pmTasks" inverseEntity="SR" syncable="YES"/>
+    </entity>
+    <entity name="Priority" representedClassName="Priority" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="multiplier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priorityEnum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priorityNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="serviceRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SR" inverseName="priority" inverseEntity="SR" syncable="YES"/>
+    </entity>
+    <entity name="SR" representedClassName="SR" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reportedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="reporter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reporterContact" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="updated"/>
+            </userInfo>
+        </attribute>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allUpdates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRUpdate" inverseName="sr" inverseEntity="SRUpdate" syncable="YES"/>
+        <relationship name="assigned" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SRAssignedUser" inverseName="sr" inverseEntity="SRAssignedUser" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRCategory" inverseName="serviceRequests" inverseEntity="SRCategory" syncable="YES"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contract" inverseName="serviceRequests" inverseEntity="Contract" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="serviceRequestsCreatedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="customFieldValues" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRCustomFieldValue" inverseName="sr" inverseEntity="SRCustomFieldValue" syncable="YES"/>
+        <relationship name="devices" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRDevice" inverseName="sr" inverseEntity="SRDevice" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="serviceRequests" inverseEntity="Location" syncable="YES"/>
+        <relationship name="pmTasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMTask" inverseName="sr" inverseEntity="PMTask" syncable="YES"/>
+        <relationship name="priority" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Priority" inverseName="serviceRequests" inverseEntity="Priority" syncable="YES"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRState" inverseName="serviceRequests" inverseEntity="SRState" syncable="YES"/>
+        <relationship name="updatedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="serviceRequestsUpdatedBy" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="SRAssignedUser" representedClassName="SRAssignedUser" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SR" inverseName="assigned" inverseEntity="SR" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="serviceRequestsAssignedUser" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="SRAttribute" representedClassName="SRAttribute" parentEntity="AbstractAttribute" syncable="YES">
+        <relationship name="categoryAttributes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SRCategoryAttribute" inverseName="attribute" inverseEntity="SRCategoryAttribute" syncable="YES"/>
+    </entity>
+    <entity name="SRCategory" representedClassName="SRCategory" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoryAttributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRCategoryAttribute" inverseName="category" inverseEntity="SRCategoryAttribute" syncable="YES"/>
+        <relationship name="serviceRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SR" inverseName="category" inverseEntity="SR" syncable="YES"/>
+        <relationship name="srMachines" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRStateMachineCategory" inverseName="category" inverseEntity="SRStateMachineCategory" syncable="YES"/>
+    </entity>
+    <entity name="SRCategoryAttribute" representedClassName="SRCategoryAttribute" parentEntity="AbstractTypeAttribute" syncable="YES">
+        <relationship name="attribute" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRAttribute" inverseName="categoryAttributes" inverseEntity="SRAttribute" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRCategory" inverseName="categoryAttributes" inverseEntity="SRCategory" syncable="YES"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contract" inverseName="srCategoryAttributes" inverseEntity="Contract" syncable="YES"/>
+    </entity>
+    <entity name="SRCategoryAttributeStateBehavior" representedClassName="SRCategoryAttributeStateBehavior" parentEntity="AbstractAttributeStateBehavior" syncable="YES"/>
+    <entity name="SRCustomFieldValue" representedClassName="SRCustomFieldValue" parentEntity="AbstractCustomFieldValue" syncable="YES">
+        <relationship name="sr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SR" inverseName="customFieldValues" inverseEntity="SR" syncable="YES"/>
+    </entity>
+    <entity name="SRDevice" representedClassName="SRDevice" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeOccurred" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="serviceRequestDevices" inverseEntity="Device" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="serviceRequestDevices" inverseEntity="Location" syncable="YES"/>
+        <relationship name="sr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SR" inverseName="devices" inverseEntity="SR" syncable="YES"/>
+        <relationship name="symptoms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRDeviceSymptom" inverseName="srDevice" inverseEntity="SRDeviceSymptom" syncable="YES"/>
+    </entity>
+    <entity name="SRDeviceSymptom" representedClassName="SRDeviceSymptom" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="srDevice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRDevice" inverseName="symptoms" inverseEntity="SRDevice" syncable="YES"/>
+        <relationship name="symptom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Symptom" inverseName="serviceRequestSymptoms" inverseEntity="Symptom" syncable="YES"/>
+    </entity>
+    <entity name="SRState" representedClassName="SRState" parentEntity="AbstractState" syncable="YES">
+        <relationship name="defaultInitialStateMachines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SRStateMachine" inverseName="defaultInitialState" inverseEntity="SRStateMachine" syncable="YES"/>
+        <relationship name="serviceRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SR" inverseName="state" inverseEntity="SR" syncable="YES"/>
+        <relationship name="sourceTransitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRTransition" inverseName="source" inverseEntity="SRTransition" syncable="YES"/>
+        <relationship name="stateUpdates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRStateUpdate" inverseName="state" inverseEntity="SRStateUpdate" syncable="YES"/>
+        <relationship name="targetTransitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRTransition" inverseName="target" inverseEntity="SRTransition" syncable="YES"/>
+    </entity>
+    <entity name="SRStateMachine" representedClassName="SRStateMachine" parentEntity="AbstractStateMachine" syncable="YES">
+        <relationship name="defaultInitialState" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRState" inverseName="defaultInitialStateMachines" inverseEntity="SRState" syncable="YES"/>
+        <relationship name="srCategories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRStateMachineCategory" inverseName="machine" inverseEntity="SRStateMachineCategory" syncable="YES"/>
+        <relationship name="transitions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRTransition" inverseName="machine" inverseEntity="SRTransition" syncable="YES"/>
+    </entity>
+    <entity name="SRStateMachineCategory" representedClassName="SRStateMachineCategory" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRCategory" inverseName="srMachines" inverseEntity="SRCategory" syncable="YES"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contract" inverseName="srStateMachineCategories" inverseEntity="Contract" syncable="YES"/>
+        <relationship name="machine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRStateMachine" inverseName="srCategories" inverseEntity="SRStateMachine" syncable="YES"/>
+    </entity>
+    <entity name="SRStateUpdate" representedClassName="SRStateUpdate" parentEntity="AbstractStateUpdate" syncable="YES">
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRState" inverseName="stateUpdates" inverseEntity="SRState" syncable="YES"/>
+        <relationship name="transition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRTransition" inverseName="stateUpdates" inverseEntity="SRTransition" syncable="YES"/>
+        <relationship name="undoneRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRStateUpdate" inverseName="undoRecord" inverseEntity="SRStateUpdate" syncable="YES"/>
+        <relationship name="undoRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRStateUpdate" inverseName="undoneRecord" inverseEntity="SRStateUpdate" syncable="YES"/>
+        <relationship name="update" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRUpdate" inverseName="stateUpdate" inverseEntity="SRUpdate" syncable="YES"/>
+    </entity>
+    <entity name="SRTransition" representedClassName="SRTransition" parentEntity="AbstractTransition" syncable="YES">
+        <relationship name="machine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRStateMachine" inverseName="transitions" inverseEntity="SRStateMachine" syncable="YES"/>
+        <relationship name="mainTransition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRTransition" inverseName="undoTransition" inverseEntity="SRTransition" syncable="YES"/>
+        <relationship name="source" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRState" inverseName="sourceTransitions" inverseEntity="SRState" syncable="YES"/>
+        <relationship name="stateUpdates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRStateUpdate" inverseName="transition" inverseEntity="SRStateUpdate" syncable="YES"/>
+        <relationship name="target" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRState" inverseName="targetTransitions" inverseEntity="SRState" syncable="YES"/>
+        <relationship name="undoTransition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRTransition" inverseName="mainTransition" inverseEntity="SRTransition" syncable="YES"/>
+    </entity>
+    <entity name="SRUpdate" representedClassName="SRUpdate" parentEntity="AbstractUpdate" syncable="YES">
+        <relationship name="files" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRUpdateFile" inverseName="serviceRequestUpdate" inverseEntity="SRUpdateFile" syncable="YES"/>
+        <relationship name="sr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SR" inverseName="allUpdates" inverseEntity="SR" syncable="YES"/>
+        <relationship name="stateUpdate" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SRStateUpdate" inverseName="update" inverseEntity="SRStateUpdate" syncable="YES"/>
+    </entity>
+    <entity name="SRUpdateFile" representedClassName="SRUpdateFile" parentEntity="AbstractUpdateFile" syncable="YES">
+        <relationship name="serviceRequestUpdate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SRUpdate" inverseName="files" inverseEntity="SRUpdate" syncable="YES"/>
+    </entity>
+    <entity name="StateLogical" representedClassName="StateLogical" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbstractState" inverseName="logicals" inverseEntity="AbstractState" syncable="YES"/>
+    </entity>
+    <entity name="Symptom" representedClassName="Symptom" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Symptom" inverseName="parent" inverseEntity="Symptom" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Symptom" inverseName="children" inverseEntity="Symptom" syncable="YES"/>
+        <relationship name="serviceRequestSymptoms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SRDeviceSymptom" inverseName="symptom" inverseEntity="SRDeviceSymptom" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="middleName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salutation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceUser" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="suffix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contactInfo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ContactInfo" inverseName="user" inverseEntity="ContactInfo" syncable="YES">
+            <userInfo>
+                <entry key="noId" value="true"/>
+            </userInfo>
+        </relationship>
+        <relationship name="devicesCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Device" inverseName="createdBy" inverseEntity="Device" syncable="YES"/>
+        <relationship name="devicesUpdatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Device" inverseName="updatedBy" inverseEntity="Device" syncable="YES"/>
+        <relationship name="drawingsCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drawing" inverseName="createdBy" inverseEntity="Drawing" syncable="YES"/>
+        <relationship name="drawingSetCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrawingSet" inverseName="createdBy" inverseEntity="DrawingSet" syncable="YES"/>
+        <relationship name="drawingSetUpdatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DrawingSet" inverseName="updatedBy" inverseEntity="DrawingSet" syncable="YES"/>
+        <relationship name="drawingsUpdatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drawing" inverseName="updatedBy" inverseEntity="Drawing" syncable="YES"/>
+        <relationship name="pmTasksFormSavedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PMTask" inverseName="formSavedBy" inverseEntity="PMTask" syncable="YES"/>
+        <relationship name="serviceRequestsAssignedUser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SRAssignedUser" inverseName="user" inverseEntity="SRAssignedUser" syncable="YES"/>
+        <relationship name="serviceRequestsCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SR" inverseName="createdBy" inverseEntity="SR" syncable="YES"/>
+        <relationship name="serviceRequestsUpdatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SR" inverseName="updatedBy" inverseEntity="SR" syncable="YES"/>
+        <relationship name="serviceRequestUpdatesCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AbstractUpdate" inverseName="createdBy" inverseEntity="AbstractUpdate" syncable="YES"/>
+        <relationship name="workFormCategoriesCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkFormCategory" inverseName="createdBy" inverseEntity="WorkFormCategory" syncable="YES"/>
+        <relationship name="workFormPDFDataCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkFormPDFData" inverseName="createdBy" inverseEntity="WorkFormPDFData" syncable="YES"/>
+        <relationship name="workFormsCreatedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkForm" inverseName="createdBy" inverseEntity="WorkForm" syncable="YES"/>
+    </entity>
+    <entity name="WorkForm" representedClassName="WorkForm" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkFormCategory" inverseName="workForms" inverseEntity="WorkFormCategory" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="workFormsCreatedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="current" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkFormPDFRevision" inverseName="formCurrent" inverseEntity="WorkFormPDFRevision" syncable="YES"/>
+        <relationship name="pmTasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMTask" inverseName="form" inverseEntity="PMTask" syncable="YES"/>
+        <relationship name="revisions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkFormPDFRevision" inverseName="form" inverseEntity="WorkFormPDFRevision" syncable="YES"/>
+    </entity>
+    <entity name="WorkFormCategory" representedClassName="WorkFormCategory" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="workFormCategoriesCreatedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="workForms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkForm" inverseName="categories" inverseEntity="WorkForm" syncable="YES"/>
+    </entity>
+    <entity name="WorkFormPDFData" representedClassName="WorkFormPDFData" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="workFormPDFDataCreatedBy" inverseEntity="User" syncable="YES"/>
+        <relationship name="file" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileMetadata" inverseName="workFormPDFData" inverseEntity="FileMetadata" syncable="YES"/>
+        <relationship name="revision" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkFormPDFRevision" inverseName="formData" inverseEntity="WorkFormPDFRevision" syncable="YES"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PMTask" inverseName="formData" inverseEntity="PMTask" syncable="YES"/>
+    </entity>
+    <entity name="WorkFormPDFRevision" representedClassName="WorkFormPDFRevision" syncable="YES">
+        <attribute name="disabled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="revision" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="updatedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES">
+            <userInfo>
+                <entry key="externalName" value="updated"/>
+            </userInfo>
+        </attribute>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fileMetaData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileMetadata" inverseName="workFormPDFRevisions" inverseEntity="FileMetadata" syncable="YES"/>
+        <relationship name="form" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkForm" inverseName="revisions" inverseEntity="WorkForm" syncable="YES"/>
+        <relationship name="formCurrent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkForm" inverseName="current" inverseEntity="WorkForm" syncable="YES">
+            <userInfo>
+                <entry key="processingIgnore" value="true"/>
+            </userInfo>
+        </relationship>
+        <relationship name="formData" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkFormPDFData" inverseName="revision" inverseEntity="WorkFormPDFData" syncable="YES"/>
+        <relationship name="pmTasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PMTask" inverseName="formRevision" inverseEntity="PMTask" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AbstractAttribute" positionX="27" positionY="162" width="128" height="405"/>
+        <element name="AbstractAttributeStateBehavior" positionX="45" positionY="153" width="128" height="135"/>
+        <element name="AbstractCustomFieldValue" positionX="36" positionY="171" width="128" height="150"/>
+        <element name="AbstractState" positionX="54" positionY="189" width="128" height="180"/>
+        <element name="AbstractStateMachine" positionX="63" positionY="198" width="128" height="105"/>
+        <element name="AbstractStateUpdate" positionX="45" positionY="153" width="128" height="90"/>
+        <element name="AbstractTransition" positionX="81" positionY="207" width="128" height="135"/>
+        <element name="AbstractTypeAttribute" positionX="27" positionY="162" width="128" height="150"/>
+        <element name="AbstractUpdate" positionX="63" positionY="171" width="128" height="150"/>
+        <element name="AbstractUpdateFile" positionX="45" positionY="153" width="128" height="120"/>
+        <element name="AttributeGroup" positionX="36" positionY="171" width="128" height="135"/>
+        <element name="ChoiceValue" positionX="18" positionY="153" width="128" height="135"/>
+        <element name="ContactInfo" positionX="63" positionY="306" width="128" height="75"/>
+        <element name="Contract" positionX="18" positionY="153" width="128" height="255"/>
+        <element name="Device" positionX="27" positionY="162" width="128" height="390"/>
+        <element name="DeviceAttribute" positionX="36" positionY="153" width="128" height="60"/>
+        <element name="DeviceContract" positionX="27" positionY="162" width="128" height="120"/>
+        <element name="DeviceCustomFieldValue" positionX="45" positionY="162" width="128" height="60"/>
+        <element name="DeviceLink" positionX="45" positionY="153" width="128" height="135"/>
+        <element name="DeviceState" positionX="18" positionY="153" width="128" height="120"/>
+        <element name="DeviceStateMachine" positionX="36" positionY="171" width="128" height="90"/>
+        <element name="DeviceStateUpdate" positionX="63" positionY="171" width="128" height="120"/>
+        <element name="DeviceTransition" positionX="45" positionY="180" width="128" height="135"/>
+        <element name="DeviceType" positionX="18" positionY="153" width="128" height="180"/>
+        <element name="DeviceTypeAttribute" positionX="72" positionY="180" width="128" height="90"/>
+        <element name="DeviceTypeAttributeContract" positionX="36" positionY="171" width="128" height="120"/>
+        <element name="DeviceTypeAttributeStateBehavior" positionX="54" positionY="162" width="128" height="45"/>
+        <element name="DeviceUpdate" positionX="54" positionY="162" width="128" height="90"/>
+        <element name="DeviceUpdateFile" positionX="45" positionY="153" width="128" height="60"/>
+        <element name="Drawing" positionX="63" positionY="306" width="128" height="225"/>
+        <element name="DrawingSet" positionX="63" positionY="306" width="128" height="195"/>
+        <element name="FileMetadata" positionX="81" positionY="189" width="128" height="285"/>
+        <element name="Location" positionX="18" positionY="153" width="128" height="225"/>
+        <element name="Organization" positionX="63" positionY="306" width="128" height="180"/>
+        <element name="PMTask" positionX="45" positionY="153" width="128" height="270"/>
+        <element name="Priority" positionX="27" positionY="162" width="128" height="195"/>
+        <element name="SR" positionX="18" positionY="153" width="128" height="390"/>
+        <element name="SRAssignedUser" positionX="63" positionY="306" width="128" height="120"/>
+        <element name="SRAttribute" positionX="63" positionY="171" width="128" height="60"/>
+        <element name="SRCategory" positionX="18" positionY="153" width="128" height="180"/>
+        <element name="SRCategoryAttribute" positionX="81" positionY="189" width="128" height="90"/>
+        <element name="SRCategoryAttributeStateBehavior" positionX="63" positionY="171" width="128" height="45"/>
+        <element name="SRCustomFieldValue" positionX="45" positionY="153" width="128" height="60"/>
+        <element name="SRDevice" positionX="54" positionY="162" width="128" height="165"/>
+        <element name="SRDeviceSymptom" positionX="54" positionY="162" width="128" height="120"/>
+        <element name="SRState" positionX="72" positionY="189" width="128" height="120"/>
+        <element name="SRStateMachine" positionX="81" positionY="198" width="128" height="90"/>
+        <element name="SRStateMachineCategory" positionX="36" positionY="153" width="128" height="135"/>
+        <element name="SRStateUpdate" positionX="54" positionY="162" width="128" height="120"/>
+        <element name="SRTransition" positionX="90" positionY="207" width="128" height="135"/>
+        <element name="SRUpdate" positionX="63" positionY="171" width="128" height="90"/>
+        <element name="SRUpdateFile" positionX="72" positionY="180" width="128" height="60"/>
+        <element name="StateLogical" positionX="45" positionY="162" width="128" height="120"/>
+        <element name="Symptom" positionX="45" positionY="153" width="128" height="165"/>
+        <element name="User" positionX="36" positionY="171" width="128" height="465"/>
+        <element name="WorkForm" positionX="45" positionY="153" width="128" height="195"/>
+        <element name="WorkFormCategory" positionX="45" positionY="153" width="128" height="165"/>
+        <element name="WorkFormPDFData" positionX="45" positionY="153" width="128" height="180"/>
+        <element name="WorkFormPDFRevision" positionX="54" positionY="162" width="128" height="210"/>
+    </elements>
+</model>

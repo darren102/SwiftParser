@@ -1,0 +1,24 @@
+{
+  "name": "CoreDataStack",
+  "version": "0.9.5",
+  "license": "MIT",
+  "summary": "CoreDataStack is M.C. Dean, Inc's persistence layer for Core Data",
+  "homepage": "https://darren102.github.io",
+  "social_media_url": "http://twitter.com/darren102",
+  "authors": {
+    "Darren Ferguson": "darren.ferguson@mcdean.com"
+  },
+  "source": {
+    "git": "git@code.mcdean.com:ios/CoreDataStack.git",
+    "tag": "0.9.5"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": [
+    "CoreDataStack/*.{h,swift}",
+    "CoreDataStack/Extensions/*"
+  ],
+  "frameworks": "CoreData"
+}

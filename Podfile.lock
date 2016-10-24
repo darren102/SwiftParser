@@ -1,0 +1,21 @@
+PODS:
+  - CoreDataStack (0.9.5)
+
+DEPENDENCIES:
+  - CoreDataStack (from `ssh://git@code.mcdean.com/ios/CoreDataStack.git`, branch
+    `master`)
+
+EXTERNAL SOURCES:
+  CoreDataStack:
+    :branch: master
+    :git: ssh://git@code.mcdean.com/ios/CoreDataStack.git
+
+CHECKOUT OPTIONS:
+  CoreDataStack:
+    :commit: ae5458ad30526cc0ccda60effa26e15d56f1d6f6
+    :git: ssh://git@code.mcdean.com/ios/CoreDataStack.git
+
+SPEC CHECKSUMS:
+  CoreDataStack: ac9ef5c2b7b9791a372b9b4d6b6dd5b874e786a4
+
+COCOAPODS: 0.39.0

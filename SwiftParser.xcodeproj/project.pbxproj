@@ -1,0 +1,940 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5605EA8BB29AAD1F5E43AAF0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73249E381F2F532EF2E8659D /* Pods.framework */; };
+		955B5F831DAE6936005399DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F821DAE6936005399DD /* AppDelegate.swift */; };
+		955B5F851DAE6936005399DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F841DAE6936005399DD /* ViewController.swift */; };
+		955B5F881DAE6936005399DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955B5F861DAE6936005399DD /* Main.storyboard */; };
+		955B5F8A1DAE6936005399DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955B5F891DAE6936005399DD /* Assets.xcassets */; };
+		955B5F8D1DAE6936005399DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955B5F8B1DAE6936005399DD /* LaunchScreen.storyboard */; };
+		955B5F961DAE6D48005399DD /* current.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F951DAE6D48005399DD /* current.xcdatamodel */; };
+		955B600E1DAE6E9C005399DD /* AbstractAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F981DAE6E9C005399DD /* AbstractAttribute.swift */; };
+		955B600F1DAE6E9C005399DD /* AbstractAttribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F991DAE6E9C005399DD /* AbstractAttribute+CoreDataProperties.swift */; };
+		955B60101DAE6E9C005399DD /* AbstractAttributeStateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F9A1DAE6E9C005399DD /* AbstractAttributeStateBehavior.swift */; };
+		955B60111DAE6E9C005399DD /* AbstractAttributeStateBehavior+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F9B1DAE6E9C005399DD /* AbstractAttributeStateBehavior+CoreDataProperties.swift */; };
+		955B60121DAE6E9C005399DD /* AbstractCustomFieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F9C1DAE6E9C005399DD /* AbstractCustomFieldValue.swift */; };
+		955B60131DAE6E9C005399DD /* AbstractCustomFieldValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F9D1DAE6E9C005399DD /* AbstractCustomFieldValue+CoreDataProperties.swift */; };
+		955B60141DAE6E9C005399DD /* AbstractState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F9E1DAE6E9C005399DD /* AbstractState.swift */; };
+		955B60151DAE6E9C005399DD /* AbstractState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5F9F1DAE6E9C005399DD /* AbstractState+CoreDataProperties.swift */; };
+		955B60161DAE6E9C005399DD /* AbstractStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA01DAE6E9C005399DD /* AbstractStateMachine.swift */; };
+		955B60171DAE6E9C005399DD /* AbstractStateMachine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA11DAE6E9C005399DD /* AbstractStateMachine+CoreDataProperties.swift */; };
+		955B60181DAE6E9C005399DD /* AbstractStateUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA21DAE6E9C005399DD /* AbstractStateUpdate.swift */; };
+		955B60191DAE6E9C005399DD /* AbstractStateUpdate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA31DAE6E9C005399DD /* AbstractStateUpdate+CoreDataProperties.swift */; };
+		955B601A1DAE6E9C005399DD /* AbstractTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA41DAE6E9C005399DD /* AbstractTransition.swift */; };
+		955B601B1DAE6E9C005399DD /* AbstractTransition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA51DAE6E9C005399DD /* AbstractTransition+CoreDataProperties.swift */; };
+		955B601C1DAE6E9C005399DD /* AbstractTypeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA61DAE6E9C005399DD /* AbstractTypeAttribute.swift */; };
+		955B601D1DAE6E9C005399DD /* AbstractTypeAttribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA71DAE6E9C005399DD /* AbstractTypeAttribute+CoreDataProperties.swift */; };
+		955B601E1DAE6E9C005399DD /* AbstractUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA81DAE6E9C005399DD /* AbstractUpdate.swift */; };
+		955B601F1DAE6E9C005399DD /* AbstractUpdate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FA91DAE6E9C005399DD /* AbstractUpdate+CoreDataProperties.swift */; };
+		955B60201DAE6E9C005399DD /* AbstractUpdateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FAA1DAE6E9C005399DD /* AbstractUpdateFile.swift */; };
+		955B60211DAE6E9C005399DD /* AbstractUpdateFile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FAB1DAE6E9C005399DD /* AbstractUpdateFile+CoreDataProperties.swift */; };
+		955B60221DAE6E9C005399DD /* AttributeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FAC1DAE6E9C005399DD /* AttributeGroup.swift */; };
+		955B60231DAE6E9C005399DD /* AttributeGroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FAD1DAE6E9C005399DD /* AttributeGroup+CoreDataProperties.swift */; };
+		955B60241DAE6E9C005399DD /* ChoiceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FAE1DAE6E9C005399DD /* ChoiceValue.swift */; };
+		955B60251DAE6E9C005399DD /* ChoiceValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FAF1DAE6E9C005399DD /* ChoiceValue+CoreDataProperties.swift */; };
+		955B60261DAE6E9C005399DD /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB01DAE6E9C005399DD /* ContactInfo.swift */; };
+		955B60271DAE6E9C005399DD /* ContactInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB11DAE6E9C005399DD /* ContactInfo+CoreDataProperties.swift */; };
+		955B60281DAE6E9C005399DD /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB21DAE6E9C005399DD /* Contract.swift */; };
+		955B60291DAE6E9C005399DD /* Contract+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB31DAE6E9C005399DD /* Contract+CoreDataProperties.swift */; };
+		955B602A1DAE6E9C005399DD /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB41DAE6E9C005399DD /* Device.swift */; };
+		955B602B1DAE6E9C005399DD /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB51DAE6E9C005399DD /* Device+CoreDataProperties.swift */; };
+		955B602C1DAE6E9C005399DD /* DeviceAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB61DAE6E9C005399DD /* DeviceAttribute.swift */; };
+		955B602D1DAE6E9C005399DD /* DeviceAttribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB71DAE6E9C005399DD /* DeviceAttribute+CoreDataProperties.swift */; };
+		955B602E1DAE6E9C005399DD /* DeviceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB81DAE6E9C005399DD /* DeviceContract.swift */; };
+		955B602F1DAE6E9C005399DD /* DeviceContract+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FB91DAE6E9C005399DD /* DeviceContract+CoreDataProperties.swift */; };
+		955B60301DAE6E9C005399DD /* DeviceCustomFieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FBA1DAE6E9C005399DD /* DeviceCustomFieldValue.swift */; };
+		955B60311DAE6E9C005399DD /* DeviceCustomFieldValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FBB1DAE6E9C005399DD /* DeviceCustomFieldValue+CoreDataProperties.swift */; };
+		955B60321DAE6E9C005399DD /* DeviceLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FBC1DAE6E9C005399DD /* DeviceLink.swift */; };
+		955B60331DAE6E9C005399DD /* DeviceLink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FBD1DAE6E9C005399DD /* DeviceLink+CoreDataProperties.swift */; };
+		955B60341DAE6E9C005399DD /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FBE1DAE6E9C005399DD /* DeviceState.swift */; };
+		955B60351DAE6E9C005399DD /* DeviceState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FBF1DAE6E9C005399DD /* DeviceState+CoreDataProperties.swift */; };
+		955B60361DAE6E9C005399DD /* DeviceStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC01DAE6E9C005399DD /* DeviceStateMachine.swift */; };
+		955B60371DAE6E9C005399DD /* DeviceStateMachine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC11DAE6E9C005399DD /* DeviceStateMachine+CoreDataProperties.swift */; };
+		955B60381DAE6E9C005399DD /* DeviceStateUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC21DAE6E9C005399DD /* DeviceStateUpdate.swift */; };
+		955B60391DAE6E9C005399DD /* DeviceStateUpdate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC31DAE6E9C005399DD /* DeviceStateUpdate+CoreDataProperties.swift */; };
+		955B603A1DAE6E9C005399DD /* DeviceTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC41DAE6E9C005399DD /* DeviceTransition.swift */; };
+		955B603B1DAE6E9C005399DD /* DeviceTransition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC51DAE6E9C005399DD /* DeviceTransition+CoreDataProperties.swift */; };
+		955B603C1DAE6E9C005399DD /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC61DAE6E9C005399DD /* DeviceType.swift */; };
+		955B603D1DAE6E9C005399DD /* DeviceType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC71DAE6E9C005399DD /* DeviceType+CoreDataProperties.swift */; };
+		955B603E1DAE6E9C005399DD /* DeviceTypeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC81DAE6E9C005399DD /* DeviceTypeAttribute.swift */; };
+		955B603F1DAE6E9C005399DD /* DeviceTypeAttribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FC91DAE6E9C005399DD /* DeviceTypeAttribute+CoreDataProperties.swift */; };
+		955B60401DAE6E9C005399DD /* DeviceTypeAttributeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FCA1DAE6E9C005399DD /* DeviceTypeAttributeContract.swift */; };
+		955B60411DAE6E9C005399DD /* DeviceTypeAttributeContract+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FCB1DAE6E9C005399DD /* DeviceTypeAttributeContract+CoreDataProperties.swift */; };
+		955B60421DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FCC1DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior.swift */; };
+		955B60431DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FCD1DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior+CoreDataProperties.swift */; };
+		955B60441DAE6E9C005399DD /* DeviceUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FCE1DAE6E9C005399DD /* DeviceUpdate.swift */; };
+		955B60451DAE6E9C005399DD /* DeviceUpdate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FCF1DAE6E9C005399DD /* DeviceUpdate+CoreDataProperties.swift */; };
+		955B60461DAE6E9C005399DD /* DeviceUpdateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD01DAE6E9C005399DD /* DeviceUpdateFile.swift */; };
+		955B60471DAE6E9C005399DD /* DeviceUpdateFile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD11DAE6E9C005399DD /* DeviceUpdateFile+CoreDataProperties.swift */; };
+		955B60481DAE6E9C005399DD /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD21DAE6E9C005399DD /* Drawing.swift */; };
+		955B60491DAE6E9C005399DD /* Drawing+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD31DAE6E9C005399DD /* Drawing+CoreDataProperties.swift */; };
+		955B604A1DAE6E9C005399DD /* DrawingSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD41DAE6E9C005399DD /* DrawingSet.swift */; };
+		955B604B1DAE6E9C005399DD /* DrawingSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD51DAE6E9C005399DD /* DrawingSet+CoreDataProperties.swift */; };
+		955B604C1DAE6E9C005399DD /* FileMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD61DAE6E9C005399DD /* FileMetadata.swift */; };
+		955B604D1DAE6E9C005399DD /* FileMetadata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD71DAE6E9C005399DD /* FileMetadata+CoreDataProperties.swift */; };
+		955B604E1DAE6E9C005399DD /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD81DAE6E9C005399DD /* Location.swift */; };
+		955B604F1DAE6E9C005399DD /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FD91DAE6E9C005399DD /* Location+CoreDataProperties.swift */; };
+		955B60501DAE6E9C005399DD /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FDA1DAE6E9C005399DD /* Organization.swift */; };
+		955B60511DAE6E9C005399DD /* Organization+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FDB1DAE6E9C005399DD /* Organization+CoreDataProperties.swift */; };
+		955B60521DAE6E9C005399DD /* PMTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FDC1DAE6E9C005399DD /* PMTask.swift */; };
+		955B60531DAE6E9C005399DD /* PMTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FDD1DAE6E9C005399DD /* PMTask+CoreDataProperties.swift */; };
+		955B60541DAE6E9C005399DD /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FDE1DAE6E9C005399DD /* Priority.swift */; };
+		955B60551DAE6E9C005399DD /* Priority+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FDF1DAE6E9C005399DD /* Priority+CoreDataProperties.swift */; };
+		955B60561DAE6E9C005399DD /* SR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE01DAE6E9C005399DD /* SR.swift */; };
+		955B60571DAE6E9C005399DD /* SR+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE11DAE6E9C005399DD /* SR+CoreDataProperties.swift */; };
+		955B60581DAE6E9C005399DD /* SRAssignedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE21DAE6E9C005399DD /* SRAssignedUser.swift */; };
+		955B60591DAE6E9C005399DD /* SRAssignedUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE31DAE6E9C005399DD /* SRAssignedUser+CoreDataProperties.swift */; };
+		955B605A1DAE6E9C005399DD /* SRAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE41DAE6E9C005399DD /* SRAttribute.swift */; };
+		955B605B1DAE6E9C005399DD /* SRAttribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE51DAE6E9C005399DD /* SRAttribute+CoreDataProperties.swift */; };
+		955B605C1DAE6E9C005399DD /* SRCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE61DAE6E9C005399DD /* SRCategory.swift */; };
+		955B605D1DAE6E9C005399DD /* SRCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE71DAE6E9C005399DD /* SRCategory+CoreDataProperties.swift */; };
+		955B605E1DAE6E9C005399DD /* SRCategoryAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE81DAE6E9C005399DD /* SRCategoryAttribute.swift */; };
+		955B605F1DAE6E9C005399DD /* SRCategoryAttribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FE91DAE6E9C005399DD /* SRCategoryAttribute+CoreDataProperties.swift */; };
+		955B60601DAE6E9C005399DD /* SRCategoryAttributeStateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FEA1DAE6E9C005399DD /* SRCategoryAttributeStateBehavior.swift */; };
+		955B60611DAE6E9C005399DD /* SRCategoryAttributeStateBehavior+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FEB1DAE6E9C005399DD /* SRCategoryAttributeStateBehavior+CoreDataProperties.swift */; };
+		955B60621DAE6E9C005399DD /* SRCustomFieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FEC1DAE6E9C005399DD /* SRCustomFieldValue.swift */; };
+		955B60631DAE6E9C005399DD /* SRCustomFieldValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FED1DAE6E9C005399DD /* SRCustomFieldValue+CoreDataProperties.swift */; };
+		955B60641DAE6E9C005399DD /* SRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FEE1DAE6E9C005399DD /* SRDevice.swift */; };
+		955B60651DAE6E9C005399DD /* SRDevice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FEF1DAE6E9C005399DD /* SRDevice+CoreDataProperties.swift */; };
+		955B60661DAE6E9C005399DD /* SRDeviceSymptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF01DAE6E9C005399DD /* SRDeviceSymptom.swift */; };
+		955B60671DAE6E9C005399DD /* SRDeviceSymptom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF11DAE6E9C005399DD /* SRDeviceSymptom+CoreDataProperties.swift */; };
+		955B60681DAE6E9C005399DD /* SRState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF21DAE6E9C005399DD /* SRState.swift */; };
+		955B60691DAE6E9C005399DD /* SRState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF31DAE6E9C005399DD /* SRState+CoreDataProperties.swift */; };
+		955B606A1DAE6E9C005399DD /* SRStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF41DAE6E9C005399DD /* SRStateMachine.swift */; };
+		955B606B1DAE6E9C005399DD /* SRStateMachine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF51DAE6E9C005399DD /* SRStateMachine+CoreDataProperties.swift */; };
+		955B606C1DAE6E9C005399DD /* SRStateMachineCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF61DAE6E9C005399DD /* SRStateMachineCategory.swift */; };
+		955B606D1DAE6E9C005399DD /* SRStateMachineCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF71DAE6E9C005399DD /* SRStateMachineCategory+CoreDataProperties.swift */; };
+		955B606E1DAE6E9C005399DD /* SRStateUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF81DAE6E9C005399DD /* SRStateUpdate.swift */; };
+		955B606F1DAE6E9C005399DD /* SRStateUpdate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FF91DAE6E9C005399DD /* SRStateUpdate+CoreDataProperties.swift */; };
+		955B60701DAE6E9C005399DD /* SRTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FFA1DAE6E9C005399DD /* SRTransition.swift */; };
+		955B60711DAE6E9C005399DD /* SRTransition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FFB1DAE6E9C005399DD /* SRTransition+CoreDataProperties.swift */; };
+		955B60721DAE6E9C005399DD /* SRUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FFC1DAE6E9C005399DD /* SRUpdate.swift */; };
+		955B60731DAE6E9C005399DD /* SRUpdate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FFD1DAE6E9C005399DD /* SRUpdate+CoreDataProperties.swift */; };
+		955B60741DAE6E9C005399DD /* SRUpdateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FFE1DAE6E9C005399DD /* SRUpdateFile.swift */; };
+		955B60751DAE6E9C005399DD /* SRUpdateFile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B5FFF1DAE6E9C005399DD /* SRUpdateFile+CoreDataProperties.swift */; };
+		955B60761DAE6E9C005399DD /* StateLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60001DAE6E9C005399DD /* StateLogical.swift */; };
+		955B60771DAE6E9C005399DD /* StateLogical+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60011DAE6E9C005399DD /* StateLogical+CoreDataProperties.swift */; };
+		955B60781DAE6E9C005399DD /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60021DAE6E9C005399DD /* Symptom.swift */; };
+		955B60791DAE6E9C005399DD /* Symptom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60031DAE6E9C005399DD /* Symptom+CoreDataProperties.swift */; };
+		955B607A1DAE6E9C005399DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60041DAE6E9C005399DD /* User.swift */; };
+		955B607B1DAE6E9C005399DD /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60051DAE6E9C005399DD /* User+CoreDataProperties.swift */; };
+		955B607C1DAE6E9C005399DD /* WorkForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60061DAE6E9C005399DD /* WorkForm.swift */; };
+		955B607D1DAE6E9C005399DD /* WorkForm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60071DAE6E9C005399DD /* WorkForm+CoreDataProperties.swift */; };
+		955B607E1DAE6E9C005399DD /* WorkFormCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60081DAE6E9C005399DD /* WorkFormCategory.swift */; };
+		955B607F1DAE6E9C005399DD /* WorkFormCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60091DAE6E9C005399DD /* WorkFormCategory+CoreDataProperties.swift */; };
+		955B60801DAE6E9C005399DD /* WorkFormPDFData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B600A1DAE6E9C005399DD /* WorkFormPDFData.swift */; };
+		955B60811DAE6E9C005399DD /* WorkFormPDFData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B600B1DAE6E9C005399DD /* WorkFormPDFData+CoreDataProperties.swift */; };
+		955B60821DAE6E9C005399DD /* WorkFormPDFRevision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B600C1DAE6E9C005399DD /* WorkFormPDFRevision.swift */; };
+		955B60831DAE6E9C005399DD /* WorkFormPDFRevision+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B600D1DAE6E9C005399DD /* WorkFormPDFRevision+CoreDataProperties.swift */; };
+		955B60861DAE6ED1005399DD /* HierarchicalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60851DAE6ED1005399DD /* HierarchicalEntity.swift */; };
+		955B608F1DAE6F03005399DD /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60881DAE6F03005399DD /* CoreDataHelper.swift */; };
+		955B60911DAE6F03005399DD /* CoreDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B608A1DAE6F03005399DD /* CoreDataMapper.swift */; };
+		955B60921DAE6F03005399DD /* CoreDataMemoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B608B1DAE6F03005399DD /* CoreDataMemoryMapper.swift */; };
+		955B60971DAE6F0B005399DD /* NSManagedObject+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60961DAE6F0B005399DD /* NSManagedObject+Mapper.swift */; };
+		955B609C1DAE6F24005399DD /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B60991DAE6F24005399DD /* Mapper.swift */; };
+		955B609E1DAE6F24005399DD /* StaticDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B609B1DAE6F24005399DD /* StaticDataMapper.swift */; };
+		955B60A01DAE70F9005399DD /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 955B609F1DAE70F9005399DD /* data.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		73249E381F2F532EF2E8659D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73A1D4C0A8C933AEACB4E398 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		955B5F7F1DAE6936005399DD /* SwiftParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		955B5F821DAE6936005399DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		955B5F841DAE6936005399DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		955B5F871DAE6936005399DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		955B5F891DAE6936005399DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		955B5F8C1DAE6936005399DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		955B5F8E1DAE6936005399DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955B5F951DAE6D48005399DD /* current.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = current.xcdatamodel; sourceTree = "<group>"; };
+		955B5F981DAE6E9C005399DD /* AbstractAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractAttribute.swift; sourceTree = "<group>"; };
+		955B5F991DAE6E9C005399DD /* AbstractAttribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractAttribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5F9A1DAE6E9C005399DD /* AbstractAttributeStateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractAttributeStateBehavior.swift; sourceTree = "<group>"; };
+		955B5F9B1DAE6E9C005399DD /* AbstractAttributeStateBehavior+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractAttributeStateBehavior+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5F9C1DAE6E9C005399DD /* AbstractCustomFieldValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractCustomFieldValue.swift; sourceTree = "<group>"; };
+		955B5F9D1DAE6E9C005399DD /* AbstractCustomFieldValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractCustomFieldValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5F9E1DAE6E9C005399DD /* AbstractState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractState.swift; sourceTree = "<group>"; };
+		955B5F9F1DAE6E9C005399DD /* AbstractState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FA01DAE6E9C005399DD /* AbstractStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractStateMachine.swift; sourceTree = "<group>"; };
+		955B5FA11DAE6E9C005399DD /* AbstractStateMachine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractStateMachine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FA21DAE6E9C005399DD /* AbstractStateUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractStateUpdate.swift; sourceTree = "<group>"; };
+		955B5FA31DAE6E9C005399DD /* AbstractStateUpdate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractStateUpdate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FA41DAE6E9C005399DD /* AbstractTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractTransition.swift; sourceTree = "<group>"; };
+		955B5FA51DAE6E9C005399DD /* AbstractTransition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractTransition+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FA61DAE6E9C005399DD /* AbstractTypeAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractTypeAttribute.swift; sourceTree = "<group>"; };
+		955B5FA71DAE6E9C005399DD /* AbstractTypeAttribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractTypeAttribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FA81DAE6E9C005399DD /* AbstractUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUpdate.swift; sourceTree = "<group>"; };
+		955B5FA91DAE6E9C005399DD /* AbstractUpdate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractUpdate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FAA1DAE6E9C005399DD /* AbstractUpdateFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUpdateFile.swift; sourceTree = "<group>"; };
+		955B5FAB1DAE6E9C005399DD /* AbstractUpdateFile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AbstractUpdateFile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FAC1DAE6E9C005399DD /* AttributeGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeGroup.swift; sourceTree = "<group>"; };
+		955B5FAD1DAE6E9C005399DD /* AttributeGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttributeGroup+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FAE1DAE6E9C005399DD /* ChoiceValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceValue.swift; sourceTree = "<group>"; };
+		955B5FAF1DAE6E9C005399DD /* ChoiceValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChoiceValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FB01DAE6E9C005399DD /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		955B5FB11DAE6E9C005399DD /* ContactInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FB21DAE6E9C005399DD /* Contract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
+		955B5FB31DAE6E9C005399DD /* Contract+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contract+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FB41DAE6E9C005399DD /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		955B5FB51DAE6E9C005399DD /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FB61DAE6E9C005399DD /* DeviceAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceAttribute.swift; sourceTree = "<group>"; };
+		955B5FB71DAE6E9C005399DD /* DeviceAttribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceAttribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FB81DAE6E9C005399DD /* DeviceContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceContract.swift; sourceTree = "<group>"; };
+		955B5FB91DAE6E9C005399DD /* DeviceContract+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceContract+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FBA1DAE6E9C005399DD /* DeviceCustomFieldValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCustomFieldValue.swift; sourceTree = "<group>"; };
+		955B5FBB1DAE6E9C005399DD /* DeviceCustomFieldValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceCustomFieldValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FBC1DAE6E9C005399DD /* DeviceLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceLink.swift; sourceTree = "<group>"; };
+		955B5FBD1DAE6E9C005399DD /* DeviceLink+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceLink+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FBE1DAE6E9C005399DD /* DeviceState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
+		955B5FBF1DAE6E9C005399DD /* DeviceState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FC01DAE6E9C005399DD /* DeviceStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStateMachine.swift; sourceTree = "<group>"; };
+		955B5FC11DAE6E9C005399DD /* DeviceStateMachine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceStateMachine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FC21DAE6E9C005399DD /* DeviceStateUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStateUpdate.swift; sourceTree = "<group>"; };
+		955B5FC31DAE6E9C005399DD /* DeviceStateUpdate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceStateUpdate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FC41DAE6E9C005399DD /* DeviceTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTransition.swift; sourceTree = "<group>"; };
+		955B5FC51DAE6E9C005399DD /* DeviceTransition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceTransition+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FC61DAE6E9C005399DD /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		955B5FC71DAE6E9C005399DD /* DeviceType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FC81DAE6E9C005399DD /* DeviceTypeAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTypeAttribute.swift; sourceTree = "<group>"; };
+		955B5FC91DAE6E9C005399DD /* DeviceTypeAttribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceTypeAttribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FCA1DAE6E9C005399DD /* DeviceTypeAttributeContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTypeAttributeContract.swift; sourceTree = "<group>"; };
+		955B5FCB1DAE6E9C005399DD /* DeviceTypeAttributeContract+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceTypeAttributeContract+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FCC1DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTypeAttributeStateBehavior.swift; sourceTree = "<group>"; };
+		955B5FCD1DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceTypeAttributeStateBehavior+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FCE1DAE6E9C005399DD /* DeviceUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUpdate.swift; sourceTree = "<group>"; };
+		955B5FCF1DAE6E9C005399DD /* DeviceUpdate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceUpdate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FD01DAE6E9C005399DD /* DeviceUpdateFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUpdateFile.swift; sourceTree = "<group>"; };
+		955B5FD11DAE6E9C005399DD /* DeviceUpdateFile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeviceUpdateFile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FD21DAE6E9C005399DD /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		955B5FD31DAE6E9C005399DD /* Drawing+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Drawing+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FD41DAE6E9C005399DD /* DrawingSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingSet.swift; sourceTree = "<group>"; };
+		955B5FD51DAE6E9C005399DD /* DrawingSet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrawingSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FD61DAE6E9C005399DD /* FileMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileMetadata.swift; sourceTree = "<group>"; };
+		955B5FD71DAE6E9C005399DD /* FileMetadata+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileMetadata+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FD81DAE6E9C005399DD /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		955B5FD91DAE6E9C005399DD /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FDA1DAE6E9C005399DD /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		955B5FDB1DAE6E9C005399DD /* Organization+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Organization+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FDC1DAE6E9C005399DD /* PMTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMTask.swift; sourceTree = "<group>"; };
+		955B5FDD1DAE6E9C005399DD /* PMTask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PMTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FDE1DAE6E9C005399DD /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		955B5FDF1DAE6E9C005399DD /* Priority+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Priority+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FE01DAE6E9C005399DD /* SR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SR.swift; sourceTree = "<group>"; };
+		955B5FE11DAE6E9C005399DD /* SR+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SR+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FE21DAE6E9C005399DD /* SRAssignedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAssignedUser.swift; sourceTree = "<group>"; };
+		955B5FE31DAE6E9C005399DD /* SRAssignedUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRAssignedUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FE41DAE6E9C005399DD /* SRAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRAttribute.swift; sourceTree = "<group>"; };
+		955B5FE51DAE6E9C005399DD /* SRAttribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRAttribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FE61DAE6E9C005399DD /* SRCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCategory.swift; sourceTree = "<group>"; };
+		955B5FE71DAE6E9C005399DD /* SRCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FE81DAE6E9C005399DD /* SRCategoryAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCategoryAttribute.swift; sourceTree = "<group>"; };
+		955B5FE91DAE6E9C005399DD /* SRCategoryAttribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRCategoryAttribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FEA1DAE6E9C005399DD /* SRCategoryAttributeStateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCategoryAttributeStateBehavior.swift; sourceTree = "<group>"; };
+		955B5FEB1DAE6E9C005399DD /* SRCategoryAttributeStateBehavior+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRCategoryAttributeStateBehavior+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FEC1DAE6E9C005399DD /* SRCustomFieldValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRCustomFieldValue.swift; sourceTree = "<group>"; };
+		955B5FED1DAE6E9C005399DD /* SRCustomFieldValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRCustomFieldValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FEE1DAE6E9C005399DD /* SRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDevice.swift; sourceTree = "<group>"; };
+		955B5FEF1DAE6E9C005399DD /* SRDevice+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRDevice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FF01DAE6E9C005399DD /* SRDeviceSymptom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRDeviceSymptom.swift; sourceTree = "<group>"; };
+		955B5FF11DAE6E9C005399DD /* SRDeviceSymptom+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRDeviceSymptom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FF21DAE6E9C005399DD /* SRState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRState.swift; sourceTree = "<group>"; };
+		955B5FF31DAE6E9C005399DD /* SRState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FF41DAE6E9C005399DD /* SRStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStateMachine.swift; sourceTree = "<group>"; };
+		955B5FF51DAE6E9C005399DD /* SRStateMachine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRStateMachine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FF61DAE6E9C005399DD /* SRStateMachineCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStateMachineCategory.swift; sourceTree = "<group>"; };
+		955B5FF71DAE6E9C005399DD /* SRStateMachineCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRStateMachineCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FF81DAE6E9C005399DD /* SRStateUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStateUpdate.swift; sourceTree = "<group>"; };
+		955B5FF91DAE6E9C005399DD /* SRStateUpdate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRStateUpdate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FFA1DAE6E9C005399DD /* SRTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRTransition.swift; sourceTree = "<group>"; };
+		955B5FFB1DAE6E9C005399DD /* SRTransition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRTransition+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FFC1DAE6E9C005399DD /* SRUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUpdate.swift; sourceTree = "<group>"; };
+		955B5FFD1DAE6E9C005399DD /* SRUpdate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRUpdate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B5FFE1DAE6E9C005399DD /* SRUpdateFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRUpdateFile.swift; sourceTree = "<group>"; };
+		955B5FFF1DAE6E9C005399DD /* SRUpdateFile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SRUpdateFile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B60001DAE6E9C005399DD /* StateLogical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateLogical.swift; sourceTree = "<group>"; };
+		955B60011DAE6E9C005399DD /* StateLogical+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StateLogical+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B60021DAE6E9C005399DD /* Symptom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
+		955B60031DAE6E9C005399DD /* Symptom+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Symptom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B60041DAE6E9C005399DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		955B60051DAE6E9C005399DD /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B60061DAE6E9C005399DD /* WorkForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkForm.swift; sourceTree = "<group>"; };
+		955B60071DAE6E9C005399DD /* WorkForm+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkForm+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B60081DAE6E9C005399DD /* WorkFormCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkFormCategory.swift; sourceTree = "<group>"; };
+		955B60091DAE6E9C005399DD /* WorkFormCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkFormCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B600A1DAE6E9C005399DD /* WorkFormPDFData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkFormPDFData.swift; sourceTree = "<group>"; };
+		955B600B1DAE6E9C005399DD /* WorkFormPDFData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkFormPDFData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B600C1DAE6E9C005399DD /* WorkFormPDFRevision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkFormPDFRevision.swift; sourceTree = "<group>"; };
+		955B600D1DAE6E9C005399DD /* WorkFormPDFRevision+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkFormPDFRevision+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		955B60851DAE6ED1005399DD /* HierarchicalEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HierarchicalEntity.swift; sourceTree = "<group>"; };
+		955B60881DAE6F03005399DD /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		955B608A1DAE6F03005399DD /* CoreDataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMapper.swift; sourceTree = "<group>"; };
+		955B608B1DAE6F03005399DD /* CoreDataMemoryMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMemoryMapper.swift; sourceTree = "<group>"; };
+		955B60961DAE6F0B005399DD /* NSManagedObject+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Mapper.swift"; sourceTree = "<group>"; };
+		955B60991DAE6F24005399DD /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		955B609B1DAE6F24005399DD /* StaticDataMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDataMapper.swift; sourceTree = "<group>"; };
+		955B609F1DAE70F9005399DD /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		A67B991EFAECD66B82ECBDFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		955B5F7C1DAE6936005399DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5605EA8BB29AAD1F5E43AAF0 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B87A39DEE7D1568696DF9AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73A1D4C0A8C933AEACB4E398 /* Pods.debug.xcconfig */,
+				A67B991EFAECD66B82ECBDFF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		555E1C22A2071B60D7E3F9AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73249E381F2F532EF2E8659D /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		955B5F761DAE6936005399DD = {
+			isa = PBXGroup;
+			children = (
+				955B5F811DAE6936005399DD /* SwiftParser */,
+				955B5F801DAE6936005399DD /* Products */,
+				0B87A39DEE7D1568696DF9AE /* Pods */,
+				555E1C22A2071B60D7E3F9AE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		955B5F801DAE6936005399DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				955B5F7F1DAE6936005399DD /* SwiftParser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		955B5F811DAE6936005399DD /* SwiftParser */ = {
+			isa = PBXGroup;
+			children = (
+				955B609F1DAE70F9005399DD /* data.json */,
+				955B5F821DAE6936005399DD /* AppDelegate.swift */,
+				955B5F891DAE6936005399DD /* Assets.xcassets */,
+				955B5F941DAE6D3B005399DD /* DataModel */,
+				955B5F8E1DAE6936005399DD /* Info.plist */,
+				955B5F8B1DAE6936005399DD /* LaunchScreen.storyboard */,
+				955B5F861DAE6936005399DD /* Main.storyboard */,
+				955B60871DAE6EF7005399DD /* Persistence */,
+				955B5F841DAE6936005399DD /* ViewController.swift */,
+			);
+			path = SwiftParser;
+			sourceTree = "<group>";
+		};
+		955B5F941DAE6D3B005399DD /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				955B5F951DAE6D48005399DD /* current.xcdatamodel */,
+				955B60841DAE6EBB005399DD /* NSManagedObjectProtocols */,
+				955B5F971DAE6D55005399DD /* NSManagedObjects */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		955B5F971DAE6D55005399DD /* NSManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				955B5F981DAE6E9C005399DD /* AbstractAttribute.swift */,
+				955B5F991DAE6E9C005399DD /* AbstractAttribute+CoreDataProperties.swift */,
+				955B5F9A1DAE6E9C005399DD /* AbstractAttributeStateBehavior.swift */,
+				955B5F9B1DAE6E9C005399DD /* AbstractAttributeStateBehavior+CoreDataProperties.swift */,
+				955B5F9C1DAE6E9C005399DD /* AbstractCustomFieldValue.swift */,
+				955B5F9D1DAE6E9C005399DD /* AbstractCustomFieldValue+CoreDataProperties.swift */,
+				955B5F9E1DAE6E9C005399DD /* AbstractState.swift */,
+				955B5F9F1DAE6E9C005399DD /* AbstractState+CoreDataProperties.swift */,
+				955B5FA01DAE6E9C005399DD /* AbstractStateMachine.swift */,
+				955B5FA11DAE6E9C005399DD /* AbstractStateMachine+CoreDataProperties.swift */,
+				955B5FA21DAE6E9C005399DD /* AbstractStateUpdate.swift */,
+				955B5FA31DAE6E9C005399DD /* AbstractStateUpdate+CoreDataProperties.swift */,
+				955B5FA41DAE6E9C005399DD /* AbstractTransition.swift */,
+				955B5FA51DAE6E9C005399DD /* AbstractTransition+CoreDataProperties.swift */,
+				955B5FA61DAE6E9C005399DD /* AbstractTypeAttribute.swift */,
+				955B5FA71DAE6E9C005399DD /* AbstractTypeAttribute+CoreDataProperties.swift */,
+				955B5FA81DAE6E9C005399DD /* AbstractUpdate.swift */,
+				955B5FA91DAE6E9C005399DD /* AbstractUpdate+CoreDataProperties.swift */,
+				955B5FAA1DAE6E9C005399DD /* AbstractUpdateFile.swift */,
+				955B5FAB1DAE6E9C005399DD /* AbstractUpdateFile+CoreDataProperties.swift */,
+				955B5FAC1DAE6E9C005399DD /* AttributeGroup.swift */,
+				955B5FAD1DAE6E9C005399DD /* AttributeGroup+CoreDataProperties.swift */,
+				955B5FAE1DAE6E9C005399DD /* ChoiceValue.swift */,
+				955B5FAF1DAE6E9C005399DD /* ChoiceValue+CoreDataProperties.swift */,
+				955B5FB01DAE6E9C005399DD /* ContactInfo.swift */,
+				955B5FB11DAE6E9C005399DD /* ContactInfo+CoreDataProperties.swift */,
+				955B5FB21DAE6E9C005399DD /* Contract.swift */,
+				955B5FB31DAE6E9C005399DD /* Contract+CoreDataProperties.swift */,
+				955B5FB41DAE6E9C005399DD /* Device.swift */,
+				955B5FB51DAE6E9C005399DD /* Device+CoreDataProperties.swift */,
+				955B5FB61DAE6E9C005399DD /* DeviceAttribute.swift */,
+				955B5FB71DAE6E9C005399DD /* DeviceAttribute+CoreDataProperties.swift */,
+				955B5FB81DAE6E9C005399DD /* DeviceContract.swift */,
+				955B5FB91DAE6E9C005399DD /* DeviceContract+CoreDataProperties.swift */,
+				955B5FBA1DAE6E9C005399DD /* DeviceCustomFieldValue.swift */,
+				955B5FBB1DAE6E9C005399DD /* DeviceCustomFieldValue+CoreDataProperties.swift */,
+				955B5FBC1DAE6E9C005399DD /* DeviceLink.swift */,
+				955B5FBD1DAE6E9C005399DD /* DeviceLink+CoreDataProperties.swift */,
+				955B5FBE1DAE6E9C005399DD /* DeviceState.swift */,
+				955B5FBF1DAE6E9C005399DD /* DeviceState+CoreDataProperties.swift */,
+				955B5FC01DAE6E9C005399DD /* DeviceStateMachine.swift */,
+				955B5FC11DAE6E9C005399DD /* DeviceStateMachine+CoreDataProperties.swift */,
+				955B5FC21DAE6E9C005399DD /* DeviceStateUpdate.swift */,
+				955B5FC31DAE6E9C005399DD /* DeviceStateUpdate+CoreDataProperties.swift */,
+				955B5FC41DAE6E9C005399DD /* DeviceTransition.swift */,
+				955B5FC51DAE6E9C005399DD /* DeviceTransition+CoreDataProperties.swift */,
+				955B5FC61DAE6E9C005399DD /* DeviceType.swift */,
+				955B5FC71DAE6E9C005399DD /* DeviceType+CoreDataProperties.swift */,
+				955B5FC81DAE6E9C005399DD /* DeviceTypeAttribute.swift */,
+				955B5FC91DAE6E9C005399DD /* DeviceTypeAttribute+CoreDataProperties.swift */,
+				955B5FCA1DAE6E9C005399DD /* DeviceTypeAttributeContract.swift */,
+				955B5FCB1DAE6E9C005399DD /* DeviceTypeAttributeContract+CoreDataProperties.swift */,
+				955B5FCC1DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior.swift */,
+				955B5FCD1DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior+CoreDataProperties.swift */,
+				955B5FCE1DAE6E9C005399DD /* DeviceUpdate.swift */,
+				955B5FCF1DAE6E9C005399DD /* DeviceUpdate+CoreDataProperties.swift */,
+				955B5FD01DAE6E9C005399DD /* DeviceUpdateFile.swift */,
+				955B5FD11DAE6E9C005399DD /* DeviceUpdateFile+CoreDataProperties.swift */,
+				955B5FD21DAE6E9C005399DD /* Drawing.swift */,
+				955B5FD31DAE6E9C005399DD /* Drawing+CoreDataProperties.swift */,
+				955B5FD41DAE6E9C005399DD /* DrawingSet.swift */,
+				955B5FD51DAE6E9C005399DD /* DrawingSet+CoreDataProperties.swift */,
+				955B5FD61DAE6E9C005399DD /* FileMetadata.swift */,
+				955B5FD71DAE6E9C005399DD /* FileMetadata+CoreDataProperties.swift */,
+				955B5FD81DAE6E9C005399DD /* Location.swift */,
+				955B5FD91DAE6E9C005399DD /* Location+CoreDataProperties.swift */,
+				955B5FDA1DAE6E9C005399DD /* Organization.swift */,
+				955B5FDB1DAE6E9C005399DD /* Organization+CoreDataProperties.swift */,
+				955B5FDC1DAE6E9C005399DD /* PMTask.swift */,
+				955B5FDD1DAE6E9C005399DD /* PMTask+CoreDataProperties.swift */,
+				955B5FDE1DAE6E9C005399DD /* Priority.swift */,
+				955B5FDF1DAE6E9C005399DD /* Priority+CoreDataProperties.swift */,
+				955B5FE01DAE6E9C005399DD /* SR.swift */,
+				955B5FE11DAE6E9C005399DD /* SR+CoreDataProperties.swift */,
+				955B5FE21DAE6E9C005399DD /* SRAssignedUser.swift */,
+				955B5FE31DAE6E9C005399DD /* SRAssignedUser+CoreDataProperties.swift */,
+				955B5FE41DAE6E9C005399DD /* SRAttribute.swift */,
+				955B5FE51DAE6E9C005399DD /* SRAttribute+CoreDataProperties.swift */,
+				955B5FE61DAE6E9C005399DD /* SRCategory.swift */,
+				955B5FE71DAE6E9C005399DD /* SRCategory+CoreDataProperties.swift */,
+				955B5FE81DAE6E9C005399DD /* SRCategoryAttribute.swift */,
+				955B5FE91DAE6E9C005399DD /* SRCategoryAttribute+CoreDataProperties.swift */,
+				955B5FEA1DAE6E9C005399DD /* SRCategoryAttributeStateBehavior.swift */,
+				955B5FEB1DAE6E9C005399DD /* SRCategoryAttributeStateBehavior+CoreDataProperties.swift */,
+				955B5FEC1DAE6E9C005399DD /* SRCustomFieldValue.swift */,
+				955B5FED1DAE6E9C005399DD /* SRCustomFieldValue+CoreDataProperties.swift */,
+				955B5FEE1DAE6E9C005399DD /* SRDevice.swift */,
+				955B5FEF1DAE6E9C005399DD /* SRDevice+CoreDataProperties.swift */,
+				955B5FF01DAE6E9C005399DD /* SRDeviceSymptom.swift */,
+				955B5FF11DAE6E9C005399DD /* SRDeviceSymptom+CoreDataProperties.swift */,
+				955B5FF21DAE6E9C005399DD /* SRState.swift */,
+				955B5FF31DAE6E9C005399DD /* SRState+CoreDataProperties.swift */,
+				955B5FF41DAE6E9C005399DD /* SRStateMachine.swift */,
+				955B5FF51DAE6E9C005399DD /* SRStateMachine+CoreDataProperties.swift */,
+				955B5FF61DAE6E9C005399DD /* SRStateMachineCategory.swift */,
+				955B5FF71DAE6E9C005399DD /* SRStateMachineCategory+CoreDataProperties.swift */,
+				955B5FF81DAE6E9C005399DD /* SRStateUpdate.swift */,
+				955B5FF91DAE6E9C005399DD /* SRStateUpdate+CoreDataProperties.swift */,
+				955B5FFA1DAE6E9C005399DD /* SRTransition.swift */,
+				955B5FFB1DAE6E9C005399DD /* SRTransition+CoreDataProperties.swift */,
+				955B5FFC1DAE6E9C005399DD /* SRUpdate.swift */,
+				955B5FFD1DAE6E9C005399DD /* SRUpdate+CoreDataProperties.swift */,
+				955B5FFE1DAE6E9C005399DD /* SRUpdateFile.swift */,
+				955B5FFF1DAE6E9C005399DD /* SRUpdateFile+CoreDataProperties.swift */,
+				955B60001DAE6E9C005399DD /* StateLogical.swift */,
+				955B60011DAE6E9C005399DD /* StateLogical+CoreDataProperties.swift */,
+				955B60021DAE6E9C005399DD /* Symptom.swift */,
+				955B60031DAE6E9C005399DD /* Symptom+CoreDataProperties.swift */,
+				955B60041DAE6E9C005399DD /* User.swift */,
+				955B60051DAE6E9C005399DD /* User+CoreDataProperties.swift */,
+				955B60061DAE6E9C005399DD /* WorkForm.swift */,
+				955B60071DAE6E9C005399DD /* WorkForm+CoreDataProperties.swift */,
+				955B60081DAE6E9C005399DD /* WorkFormCategory.swift */,
+				955B60091DAE6E9C005399DD /* WorkFormCategory+CoreDataProperties.swift */,
+				955B600A1DAE6E9C005399DD /* WorkFormPDFData.swift */,
+				955B600B1DAE6E9C005399DD /* WorkFormPDFData+CoreDataProperties.swift */,
+				955B600C1DAE6E9C005399DD /* WorkFormPDFRevision.swift */,
+				955B600D1DAE6E9C005399DD /* WorkFormPDFRevision+CoreDataProperties.swift */,
+			);
+			name = NSManagedObjects;
+			sourceTree = "<group>";
+		};
+		955B60841DAE6EBB005399DD /* NSManagedObjectProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				955B60851DAE6ED1005399DD /* HierarchicalEntity.swift */,
+			);
+			name = NSManagedObjectProtocols;
+			sourceTree = "<group>";
+		};
+		955B60871DAE6EF7005399DD /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				955B60881DAE6F03005399DD /* CoreDataHelper.swift */,
+				955B608A1DAE6F03005399DD /* CoreDataMapper.swift */,
+				955B608B1DAE6F03005399DD /* CoreDataMemoryMapper.swift */,
+				955B60981DAE6F13005399DD /* Mappers */,
+				955B60961DAE6F0B005399DD /* NSManagedObject+Mapper.swift */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		955B60981DAE6F13005399DD /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				955B60991DAE6F24005399DD /* Mapper.swift */,
+				955B609B1DAE6F24005399DD /* StaticDataMapper.swift */,
+			);
+			name = Mappers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		955B5F7E1DAE6936005399DD /* SwiftParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955B5F911DAE6936005399DD /* Build configuration list for PBXNativeTarget "SwiftParser" */;
+			buildPhases = (
+				CC658D09B3DBE2558F71E22E /* Check Pods Manifest.lock */,
+				955B5F7B1DAE6936005399DD /* Sources */,
+				955B5F7C1DAE6936005399DD /* Frameworks */,
+				955B5F7D1DAE6936005399DD /* Resources */,
+				7B4C37F47DE95362ABDBA91B /* Embed Pods Frameworks */,
+				A53C70C15178AFB83E31011F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftParser;
+			productName = SwiftParser;
+			productReference = 955B5F7F1DAE6936005399DD /* SwiftParser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		955B5F771DAE6936005399DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "M.C. Dean, Inc";
+				TargetAttributes = {
+					955B5F7E1DAE6936005399DD = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = S594544RCF;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 955B5F7A1DAE6936005399DD /* Build configuration list for PBXProject "SwiftParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 955B5F761DAE6936005399DD;
+			productRefGroup = 955B5F801DAE6936005399DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				955B5F7E1DAE6936005399DD /* SwiftParser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		955B5F7D1DAE6936005399DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955B5F8D1DAE6936005399DD /* LaunchScreen.storyboard in Resources */,
+				955B5F8A1DAE6936005399DD /* Assets.xcassets in Resources */,
+				955B5F881DAE6936005399DD /* Main.storyboard in Resources */,
+				955B60A01DAE70F9005399DD /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B4C37F47DE95362ABDBA91B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A53C70C15178AFB83E31011F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC658D09B3DBE2558F71E22E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		955B5F7B1DAE6936005399DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955B602D1DAE6E9C005399DD /* DeviceAttribute+CoreDataProperties.swift in Sources */,
+				955B60321DAE6E9C005399DD /* DeviceLink.swift in Sources */,
+				955B60481DAE6E9C005399DD /* Drawing.swift in Sources */,
+				955B60221DAE6E9C005399DD /* AttributeGroup.swift in Sources */,
+				955B5F851DAE6936005399DD /* ViewController.swift in Sources */,
+				955B60801DAE6E9C005399DD /* WorkFormPDFData.swift in Sources */,
+				955B60811DAE6E9C005399DD /* WorkFormPDFData+CoreDataProperties.swift in Sources */,
+				955B60531DAE6E9C005399DD /* PMTask+CoreDataProperties.swift in Sources */,
+				955B60351DAE6E9C005399DD /* DeviceState+CoreDataProperties.swift in Sources */,
+				955B603D1DAE6E9C005399DD /* DeviceType+CoreDataProperties.swift in Sources */,
+				955B60241DAE6E9C005399DD /* ChoiceValue.swift in Sources */,
+				955B60281DAE6E9C005399DD /* Contract.swift in Sources */,
+				955B60691DAE6E9C005399DD /* SRState+CoreDataProperties.swift in Sources */,
+				955B607D1DAE6E9C005399DD /* WorkForm+CoreDataProperties.swift in Sources */,
+				955B60121DAE6E9C005399DD /* AbstractCustomFieldValue.swift in Sources */,
+				955B609E1DAE6F24005399DD /* StaticDataMapper.swift in Sources */,
+				955B60371DAE6E9C005399DD /* DeviceStateMachine+CoreDataProperties.swift in Sources */,
+				955B60471DAE6E9C005399DD /* DeviceUpdateFile+CoreDataProperties.swift in Sources */,
+				955B602F1DAE6E9C005399DD /* DeviceContract+CoreDataProperties.swift in Sources */,
+				955B60381DAE6E9C005399DD /* DeviceStateUpdate.swift in Sources */,
+				955B60831DAE6E9C005399DD /* WorkFormPDFRevision+CoreDataProperties.swift in Sources */,
+				955B60311DAE6E9C005399DD /* DeviceCustomFieldValue+CoreDataProperties.swift in Sources */,
+				955B607E1DAE6E9C005399DD /* WorkFormCategory.swift in Sources */,
+				955B601A1DAE6E9C005399DD /* AbstractTransition.swift in Sources */,
+				955B60631DAE6E9C005399DD /* SRCustomFieldValue+CoreDataProperties.swift in Sources */,
+				955B5F831DAE6936005399DD /* AppDelegate.swift in Sources */,
+				955B607A1DAE6E9C005399DD /* User.swift in Sources */,
+				955B60591DAE6E9C005399DD /* SRAssignedUser+CoreDataProperties.swift in Sources */,
+				955B60391DAE6E9C005399DD /* DeviceStateUpdate+CoreDataProperties.swift in Sources */,
+				955B606C1DAE6E9C005399DD /* SRStateMachineCategory.swift in Sources */,
+				955B60821DAE6E9C005399DD /* WorkFormPDFRevision.swift in Sources */,
+				955B606E1DAE6E9C005399DD /* SRStateUpdate.swift in Sources */,
+				955B60751DAE6E9C005399DD /* SRUpdateFile+CoreDataProperties.swift in Sources */,
+				955B60611DAE6E9C005399DD /* SRCategoryAttributeStateBehavior+CoreDataProperties.swift in Sources */,
+				955B60501DAE6E9C005399DD /* Organization.swift in Sources */,
+				955B606B1DAE6E9C005399DD /* SRStateMachine+CoreDataProperties.swift in Sources */,
+				955B60491DAE6E9C005399DD /* Drawing+CoreDataProperties.swift in Sources */,
+				955B60431DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior+CoreDataProperties.swift in Sources */,
+				955B60341DAE6E9C005399DD /* DeviceState.swift in Sources */,
+				955B60571DAE6E9C005399DD /* SR+CoreDataProperties.swift in Sources */,
+				955B60911DAE6F03005399DD /* CoreDataMapper.swift in Sources */,
+				955B604B1DAE6E9C005399DD /* DrawingSet+CoreDataProperties.swift in Sources */,
+				955B60521DAE6E9C005399DD /* PMTask.swift in Sources */,
+				955B604E1DAE6E9C005399DD /* Location.swift in Sources */,
+				955B60361DAE6E9C005399DD /* DeviceStateMachine.swift in Sources */,
+				955B60401DAE6E9C005399DD /* DeviceTypeAttributeContract.swift in Sources */,
+				955B60461DAE6E9C005399DD /* DeviceUpdateFile.swift in Sources */,
+				955B605E1DAE6E9C005399DD /* SRCategoryAttribute.swift in Sources */,
+				955B60661DAE6E9C005399DD /* SRDeviceSymptom.swift in Sources */,
+				955B60861DAE6ED1005399DD /* HierarchicalEntity.swift in Sources */,
+				955B60201DAE6E9C005399DD /* AbstractUpdateFile.swift in Sources */,
+				955B602C1DAE6E9C005399DD /* DeviceAttribute.swift in Sources */,
+				955B60731DAE6E9C005399DD /* SRUpdate+CoreDataProperties.swift in Sources */,
+				955B60441DAE6E9C005399DD /* DeviceUpdate.swift in Sources */,
+				955B60161DAE6E9C005399DD /* AbstractStateMachine.swift in Sources */,
+				955B607F1DAE6E9C005399DD /* WorkFormCategory+CoreDataProperties.swift in Sources */,
+				955B608F1DAE6F03005399DD /* CoreDataHelper.swift in Sources */,
+				955B60451DAE6E9C005399DD /* DeviceUpdate+CoreDataProperties.swift in Sources */,
+				955B60791DAE6E9C005399DD /* Symptom+CoreDataProperties.swift in Sources */,
+				955B60581DAE6E9C005399DD /* SRAssignedUser.swift in Sources */,
+				955B605A1DAE6E9C005399DD /* SRAttribute.swift in Sources */,
+				955B60411DAE6E9C005399DD /* DeviceTypeAttributeContract+CoreDataProperties.swift in Sources */,
+				955B603F1DAE6E9C005399DD /* DeviceTypeAttribute+CoreDataProperties.swift in Sources */,
+				955B60561DAE6E9C005399DD /* SR.swift in Sources */,
+				955B60671DAE6E9C005399DD /* SRDeviceSymptom+CoreDataProperties.swift in Sources */,
+				955B60681DAE6E9C005399DD /* SRState.swift in Sources */,
+				955B606F1DAE6E9C005399DD /* SRStateUpdate+CoreDataProperties.swift in Sources */,
+				955B605F1DAE6E9C005399DD /* SRCategoryAttribute+CoreDataProperties.swift in Sources */,
+				955B60621DAE6E9C005399DD /* SRCustomFieldValue.swift in Sources */,
+				955B60151DAE6E9C005399DD /* AbstractState+CoreDataProperties.swift in Sources */,
+				955B603B1DAE6E9C005399DD /* DeviceTransition+CoreDataProperties.swift in Sources */,
+				955B60141DAE6E9C005399DD /* AbstractState.swift in Sources */,
+				955B601D1DAE6E9C005399DD /* AbstractTypeAttribute+CoreDataProperties.swift in Sources */,
+				955B604A1DAE6E9C005399DD /* DrawingSet.swift in Sources */,
+				955B60271DAE6E9C005399DD /* ContactInfo+CoreDataProperties.swift in Sources */,
+				955B60511DAE6E9C005399DD /* Organization+CoreDataProperties.swift in Sources */,
+				955B600F1DAE6E9C005399DD /* AbstractAttribute+CoreDataProperties.swift in Sources */,
+				955B60171DAE6E9C005399DD /* AbstractStateMachine+CoreDataProperties.swift in Sources */,
+				955B60191DAE6E9C005399DD /* AbstractStateUpdate+CoreDataProperties.swift in Sources */,
+				955B60741DAE6E9C005399DD /* SRUpdateFile.swift in Sources */,
+				955B60771DAE6E9C005399DD /* StateLogical+CoreDataProperties.swift in Sources */,
+				955B604D1DAE6E9C005399DD /* FileMetadata+CoreDataProperties.swift in Sources */,
+				955B60711DAE6E9C005399DD /* SRTransition+CoreDataProperties.swift in Sources */,
+				955B601F1DAE6E9C005399DD /* AbstractUpdate+CoreDataProperties.swift in Sources */,
+				955B600E1DAE6E9C005399DD /* AbstractAttribute.swift in Sources */,
+				955B60231DAE6E9C005399DD /* AttributeGroup+CoreDataProperties.swift in Sources */,
+				955B60111DAE6E9C005399DD /* AbstractAttributeStateBehavior+CoreDataProperties.swift in Sources */,
+				955B60301DAE6E9C005399DD /* DeviceCustomFieldValue.swift in Sources */,
+				955B60131DAE6E9C005399DD /* AbstractCustomFieldValue+CoreDataProperties.swift in Sources */,
+				955B60291DAE6E9C005399DD /* Contract+CoreDataProperties.swift in Sources */,
+				955B607B1DAE6E9C005399DD /* User+CoreDataProperties.swift in Sources */,
+				955B606D1DAE6E9C005399DD /* SRStateMachineCategory+CoreDataProperties.swift in Sources */,
+				955B602B1DAE6E9C005399DD /* Device+CoreDataProperties.swift in Sources */,
+				955B60551DAE6E9C005399DD /* Priority+CoreDataProperties.swift in Sources */,
+				955B602E1DAE6E9C005399DD /* DeviceContract.swift in Sources */,
+				955B605B1DAE6E9C005399DD /* SRAttribute+CoreDataProperties.swift in Sources */,
+				955B601E1DAE6E9C005399DD /* AbstractUpdate.swift in Sources */,
+				955B60971DAE6F0B005399DD /* NSManagedObject+Mapper.swift in Sources */,
+				955B60781DAE6E9C005399DD /* Symptom.swift in Sources */,
+				955B602A1DAE6E9C005399DD /* Device.swift in Sources */,
+				955B606A1DAE6E9C005399DD /* SRStateMachine.swift in Sources */,
+				955B603C1DAE6E9C005399DD /* DeviceType.swift in Sources */,
+				955B60261DAE6E9C005399DD /* ContactInfo.swift in Sources */,
+				955B604F1DAE6E9C005399DD /* Location+CoreDataProperties.swift in Sources */,
+				955B60701DAE6E9C005399DD /* SRTransition.swift in Sources */,
+				955B60251DAE6E9C005399DD /* ChoiceValue+CoreDataProperties.swift in Sources */,
+				955B60101DAE6E9C005399DD /* AbstractAttributeStateBehavior.swift in Sources */,
+				955B605C1DAE6E9C005399DD /* SRCategory.swift in Sources */,
+				955B601C1DAE6E9C005399DD /* AbstractTypeAttribute.swift in Sources */,
+				955B60421DAE6E9C005399DD /* DeviceTypeAttributeStateBehavior.swift in Sources */,
+				955B604C1DAE6E9C005399DD /* FileMetadata.swift in Sources */,
+				955B60211DAE6E9C005399DD /* AbstractUpdateFile+CoreDataProperties.swift in Sources */,
+				955B60541DAE6E9C005399DD /* Priority.swift in Sources */,
+				955B60181DAE6E9C005399DD /* AbstractStateUpdate.swift in Sources */,
+				955B607C1DAE6E9C005399DD /* WorkForm.swift in Sources */,
+				955B60761DAE6E9C005399DD /* StateLogical.swift in Sources */,
+				955B60641DAE6E9C005399DD /* SRDevice.swift in Sources */,
+				955B60921DAE6F03005399DD /* CoreDataMemoryMapper.swift in Sources */,
+				955B60601DAE6E9C005399DD /* SRCategoryAttributeStateBehavior.swift in Sources */,
+				955B603A1DAE6E9C005399DD /* DeviceTransition.swift in Sources */,
+				955B60721DAE6E9C005399DD /* SRUpdate.swift in Sources */,
+				955B601B1DAE6E9C005399DD /* AbstractTransition+CoreDataProperties.swift in Sources */,
+				955B60331DAE6E9C005399DD /* DeviceLink+CoreDataProperties.swift in Sources */,
+				955B609C1DAE6F24005399DD /* Mapper.swift in Sources */,
+				955B605D1DAE6E9C005399DD /* SRCategory+CoreDataProperties.swift in Sources */,
+				955B603E1DAE6E9C005399DD /* DeviceTypeAttribute.swift in Sources */,
+				955B5F961DAE6D48005399DD /* current.xcdatamodel in Sources */,
+				955B60651DAE6E9C005399DD /* SRDevice+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		955B5F861DAE6936005399DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955B5F871DAE6936005399DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		955B5F8B1DAE6936005399DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955B5F8C1DAE6936005399DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		955B5F8F1DAE6936005399DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		955B5F901DAE6936005399DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		955B5F921DAE6936005399DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73A1D4C0A8C933AEACB4E398 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S594544RCF;
+				INFOPLIST_FILE = SwiftParser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcdean.mobile.SwiftParser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		955B5F931DAE6936005399DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A67B991EFAECD66B82ECBDFF /* Pods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S594544RCF;
+				INFOPLIST_FILE = SwiftParser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcdean.mobile.SwiftParser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		955B5F7A1DAE6936005399DD /* Build configuration list for PBXProject "SwiftParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955B5F8F1DAE6936005399DD /* Debug */,
+				955B5F901DAE6936005399DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955B5F911DAE6936005399DD /* Build configuration list for PBXNativeTarget "SwiftParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955B5F921DAE6936005399DD /* Debug */,
+				955B5F931DAE6936005399DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 955B5F771DAE6936005399DD /* Project object */;
+}
